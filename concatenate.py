@@ -13,11 +13,11 @@ FILEPATH = "./datasets/raw/"
 FILEPATH_YEAR_ONE = FILEPATH + "2016/"
 FILEPATH_YEAR_TWO = FILEPATH + "2017/"
 
-# UNCLEANED YEAR ONE DATASETS
-YEAR_ONE_DATASETS = glob.iglob(FILEPATH_YEAR_ONE + "Anon Week * Feedback - *.csv")
-
 # WTF WEEK 8 ???
 UNCLEANED_WEEK_EIGHT_2016 = FILEPATH_YEAR_TWO + "Week 8 Feedback (2016, incomplete) - results"
+
+# UNCLEANED YEAR ONE DATASETS
+YEAR_ONE_DATASETS = glob.iglob(FILEPATH_YEAR_ONE + "Anon Week * Feedback - *.csv")
 
 # Destinations for cleaned data
 DATASETS = [
@@ -36,9 +36,6 @@ LOCATIONS = {
     "NY" : "New York",
     "SV" : "Silicon Valley"
 }
-
-# COLUMN INDEX LOOKUP
-DATASETS 
 
 def main():
 
@@ -72,7 +69,6 @@ def main():
             writer = csv.writer(dataset, delimiter=',',
                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
 
-            configure_lookup_table(reader[0])
 
             # configure 
             for row, row_number in reader:

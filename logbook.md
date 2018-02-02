@@ -2,7 +2,6 @@
 
 # Defining Columns
 - Student ID
-- 
 
 ## Preprocessing
 1. Created a file `concatenate.py`
@@ -17,13 +16,13 @@
 ## Iterative Steps
 1. Read in all file names from a directory
 1. For each file in a directory create a new DataFile object:
+    + Header : Index Lookup
+        - Dict that deals with columns not matching
     + Week (int)
         - parse name
         - convert to int
     + Location (str)
         - parse name
         - change using lookup
-    + Filepath (str)    
-    + File_Object
-    + Contents (list)
+    + Reader (glob.iglob() object)
 

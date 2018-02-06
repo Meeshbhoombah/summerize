@@ -1,6 +1,5 @@
 # Datasets
 datasets/*.csv
-datasets/raw/
 
 # Mac
 .DS_Store

@@ -15,7 +15,7 @@ FILEPATH_YEAR_ONE = FILEPATH + "2016/"
 FILEPATH_YEAR_TWO = FILEPATH + "2017/"
 
 # WTF WEEK 8 ???
-UNCLEANED_WEEK_EIGHT_2016 = FILEPATH_YEAR_TWO + "Week 8 Feedback (2016, incomplete) - results"
+UNCLEANED_WEEK_EIGHT_2016 = FILEPATH_YEAR_ONE + "Week 8 Feedback (2016, incomplete) - results"
 
 # UNCLEANED YEAR ONE DATASETS
 YEAR_ONE_DATASETS = glob.iglob(FILEPATH_YEAR_ONE + "Anon Week * Feedback - *.csv")
@@ -96,14 +96,14 @@ def main():
                 week_loc = filepath[-19:-4]
 
                 # set empty values for all columns
-                student_id = None
+                student_id = "NULL"
                 year = 2016
                 week = int(week_loc[0])
-                track = None
+                track = "NULL"
                 loc = LOCATIONS[week_loc[-2:]]
-                satisfaction = None
-                pace_rating = None
-                datetime = None
+                satisfaction = "NULL"
+                pace_rating = "NULL"
+                datetime = "NULL"
 
                 for column_number, item in enumerate(row):
 
@@ -161,6 +161,14 @@ def main():
                                      pace_rating,
                                      datetime])
 
+    
+    """
+    2017
+    """
+    YEAR_TWO_DATASETS = glob.iglob(FILEPATH_YEAR_TWO + "Student Feedback Surveys-Superview.csv")
+    
+    for dataset in YEAR_TWO_DATASETS:
+        print(dataset)
 
 def parse_headers(header_row):
 
